@@ -1,0 +1,73 @@
+<div style="margin: 0px; padding: 0px;">
+
+    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+
+        Stimate ${object.partner_id.name}
+
+        % if object.partner_id.parent_id:
+
+            (${object.partner_id.parent_id.name})
+
+        % endif
+
+        <br><br>Va retrimitem factura lunii ianuarie pentru a ne asigura ca a intrat in posesia dumneavoastra.</p><p style="margin: 0px; padding: 0px; font-size: 13px;">În data de ${object.date_invoice} s-a emis % if object.number: factura <strong>${object.number}</strong>
+
+        % else:
+
+            factura
+
+        %endif
+
+        % if object.origin:
+
+            (cu referința: ${object.origin})
+
+        % endif
+
+        in valoare de <strong>${format_amount(object.amount_total, object.currency_id)}</strong>
+
+        din partea ${object.company_id.name}, scadentă la ${object.date_due}.
+
+        % if object.state=='paid':
+
+            <br>Aceasta factura este deja platită.
+
+        % else:
+
+            <br>
+
+            Puteti plati factura pe baza numarului si datei acesteia, alegand una dintre urmatoarele modalitati: <br>
+
+            - Virament in contul RO23INGB0000999901332986 - ING BANK TINERETULUI (primirea incasarii se realizeaza cel tarziu in ziua urmatoare platii)<br>
+
+            - Mandat postal (primirea incasarii se realizeaza in termen de 6 zile lucratoare)
+
+            Vă rugam sa confirmati plata in cat de curând.
+
+        % endif
+
+        <br><br>
+
+    </p>
+
+<p>
+
+<i>Va multumim,</i><br>
+
+SETRIO SOFT SRL - Preciziei, nr. 20, etaj 1, sector Sector 6, BUCURESTI<br>
+
+Tel. 213311540, Fax <br>
+
+<a href="mailto:office@setrio.ro">office@setrio.ro</a>, <a href="http://www.setrio.ro">www.setrio.ro</a>
+
+</p>
+
+<p>
+
+<br>
+
+<strong><i>Asteptam sugestiile dvs. la adresa de mail contabilitate@setrio.ro</i></strong>
+
+</p>
+
+</div>
